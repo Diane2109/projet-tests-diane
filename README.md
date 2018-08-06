@@ -10,7 +10,7 @@ Dans ce README il y a un exo d'une app rails, avec des models, des controllers, 
 
 Lancer l'appli : 
 
-Clique sur le lien suivant : https://dashboard.heroku.com/apps/tdd-app-diane (il s'agit d'un lien heroku).
+Clique sur le lien suivant : https://tdd-app-diane.herokuapp.com/ (il s'agit d'un lien heroku).
 
 Télécharge/clone ou ouvre le repo pour vérifier mes codes.
 
