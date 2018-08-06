@@ -1,0 +1,824 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180806075610)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-08-06 15:08:00.482534"], ["updated_at", "2018-08-06 15:08:00.482534"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:08:40.470392', '2018-08-06 15:08:40.470392', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:08:40.470392', '2018-08-06 15:08:40.470392', 298486374)[0m
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_first_name_should_be_present_(nonblank)
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:13:10.605194', '2018-08-06 15:13:10.605194', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:13:10.605194', '2018-08-06 15:13:10.605194', 298486374)[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_first_name_should_be_present_(nonblank)
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:18:37.678269', '2018-08-06 15:18:37.678269', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:18:37.678269', '2018-08-06 15:18:37.678269', 298486374)[0m
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_first_name_should_be_present_(nonblank)
+------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:19:23.460462', '2018-08-06 15:19:23.460462', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:19:23.460462', '2018-08-06 15:19:23.460462', 298486374)[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_first_name_should_be_present_(nonblank)
+------------------------------------------------------
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:21:11.479296', '2018-08-06 15:21:11.479296', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:21:11.479296', '2018-08-06 15:21:11.479296', 298486374)[0m
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:21:30.846146', '2018-08-06 15:21:30.846146', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:21:30.846146', '2018-08-06 15:21:30.846146', 298486374)[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:24:23.154567', '2018-08-06 15:24:23.154567', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:24:23.154567', '2018-08-06 15:24:23.154567', 298486374)[0m
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "aze@gg.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:28:28.568279', '2018-08-06 15:28:28.568279', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:28:28.568279', '2018-08-06 15:28:28.568279', 298486374)[0m
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:29:45.968440', '2018-08-06 15:29:45.968440', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:29:45.968440', '2018-08-06 15:29:45.968440', 298486374)[0m
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Example User"], ["last_name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$/I9qvUCktsmcL5PBZXqutuL60p8weVSzLcc6FBjRFaeIar9M5hDGe"], ["created_at", "2018-08-06 15:29:46.002991"], ["updated_at", "2018-08-06 15:29:46.002991"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "user@example.com"], ["id", 980190963], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:30:06.712496', '2018-08-06 15:30:06.712496', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:30:06.712496', '2018-08-06 15:30:06.712496', 298486374)[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:31:19.814219', '2018-08-06 15:31:19.814219', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:31:19.814219', '2018-08-06 15:31:19.814219', 298486374)[0m
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Example User"], ["last_name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$zH6yrWtBUV0Gihf6qVh/qOh0kAexrMQjDGLEQtQOvJjYjgjHlDER."], ["created_at", "2018-08-06 15:31:19.859624"], ["updated_at", "2018-08-06 15:31:19.859624"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:31:49.138339', '2018-08-06 15:31:49.138339', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:31:49.138339', '2018-08-06 15:31:49.138339', 298486374)[0m
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Example User"], ["last_name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$LkQmWqIUiG8bboeNH4i9hORwhO/xvCWHyyC6HUFYVgcmivtM3Veae"], ["created_at", "2018-08-06 15:31:49.172188"], ["updated_at", "2018-08-06 15:31:49.172188"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:35:17.240891', '2018-08-06 15:35:17.240891', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:35:17.240891', '2018-08-06 15:35:17.240891', 298486374)[0m
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_last_name_should_be_nonblank
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Example User"], ["last_name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$E4RMQkgCu9zJ3NlYkYuSOe7DBs1Ue0kNIuZoWwRZ9.WNnwDjSCqH."], ["created_at", "2018-08-06 15:35:17.331425"], ["updated_at", "2018-08-06 15:35:17.331425"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:36:35.911574', '2018-08-06 15:36:35.911574', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:36:35.911574', '2018-08-06 15:36:35.911574', 298486374)[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_last_name_should_be_nonblank
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+UserTest: test_email_should_be_nonblank
+---------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "      "], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Example User"], ["last_name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$kvddK.oVJGrz7kjz1tsLOu4n5I51xuReOqx9pe1GxiLx3S4yDmUGu"], ["created_at", "2018-08-06 15:36:36.004568"], ["updated_at", "2018-08-06 15:36:36.004568"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:41:40.306542', '2018-08-06 15:41:40.306542', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:41:40.306542', '2018-08-06 15:41:40.306542', 298486374)[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+UsersControllerTest: test_le_lien_se_connecter_est_présent_en_log_out
+---------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:41:58.856552', '2018-08-06 15:41:58.856552', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:41:58.856552', '2018-08-06 15:41:58.856552', 298486374)[0m
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+UsersControllerTest: test_le_lien_se_connecter_est_présent_en_log_out
+---------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:52:51.145998', '2018-08-06 15:52:51.145998', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:52:51.145998', '2018-08-06 15:52:51.145998', 298486374)[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+UsersControllerTest: test_le_lien_se_connecter_est_présent_en_log_out
+---------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:53:13.720009', '2018-08-06 15:53:13.720009', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:53:13.720009', '2018-08-06 15:53:13.720009', 298486374)[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+UsersControllerTest: test_le_lien_se_connecter_est_présent_en_log_out
+---------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:58:34.084254', '2018-08-06 15:58:34.084254', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:58:34.084254', '2018-08-06 15:58:34.084254', 298486374)[0m
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+UsersControllerTest: test_le_lien_se_connecter_est_présent_en_log_out
+---------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:59:03.086393', '2018-08-06 15:59:03.086393', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 15:59:03.086393', '2018-08-06 15:59:03.086393', 298486374)[0m
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+UsersControllerTest: test_le_lien_se_connecter_est_présent_en_log_out
+---------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:24:55.672450', '2018-08-06 20:24:55.672450', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:24:55.672450', '2018-08-06 20:24:55.672450', 298486374)[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:24:56 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (20.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 615ms (Views: 596.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:32:41.596467', '2018-08-06 20:32:41.596467', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:32:41.596467', '2018-08-06 20:32:41.596467', 298486374)[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:32:41 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (17.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 260ms (Views: 246.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:33:26.648616', '2018-08-06 20:33:26.648616', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:33:26.648616', '2018-08-06 20:33:26.648616', 298486374)[0m
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:33:26 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (24.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 265ms (Views: 253.0ms | ActiveRecord: 0.4ms)
+Started POST "/login" for 127.0.0.1 at 2018-08-06 22:33:27 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2018-08-06 22:33:27 +0200
+Processing by StaticpagesController#index as HTML
+  Rendering staticpages/index.html.erb within layouts/application
+  Rendered staticpages/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:51:47.948921', '2018-08-06 20:51:47.948921', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:51:47.948921', '2018-08-06 20:51:47.948921', 298486374)[0m
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:51:48 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 293ms (Views: 280.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:51:57.381805', '2018-08-06 20:51:57.381805', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:51:57.381805', '2018-08-06 20:51:57.381805', 298486374)[0m
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:51:57 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (11.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 290ms (Views: 275.5ms | ActiveRecord: 0.4ms)
+Started POST "/login" for 127.0.0.1 at 2018-08-06 22:51:57 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:52:46.010255', '2018-08-06 20:52:46.010255', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:52:46.010255', '2018-08-06 20:52:46.010255', 298486374)[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:52:46 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (22.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 288ms (Views: 277.0ms | ActiveRecord: 0.4ms)
+Started POST "/login" for 127.0.0.1 at 2018-08-06 22:52:46 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2018-08-06 22:52:46 +0200
+Processing by StaticpagesController#index as HTML
+  Rendering staticpages/index.html.erb within layouts/application
+  Rendered staticpages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:53:03.534684', '2018-08-06 20:53:03.534684', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:53:03.534684', '2018-08-06 20:53:03.534684', 298486374)[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:53:03 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 663ms (Views: 637.7ms | ActiveRecord: 0.4ms)
+Started POST "/login" for 127.0.0.1 at 2018-08-06 22:53:04 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:54:15.263206', '2018-08-06 20:54:15.263206', 980190962)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:54:15.263206', '2018-08-06 20:54:15.263206', 298486374)[0m
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:54:15 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (13.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 323ms (Views: 301.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+UserTest: test_email_should_be_nonblank
+---------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "      "], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_first_name_should_be_present
+-------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+UserTest: test_last_name_should_be_present
+------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+UserTest: test_email_should_be_unique
+-------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Example User"], ["last_name", "Example User"], ["email", "user@example.com"], ["password_digest", "$2a$04$VCgVfKzWBDvSwgLX3UwcXOgyK6aVHFYjBy92fjvaMkUV/nN3uf31u"], ["created_at", "2018-08-06 20:54:15.976114"], ["updated_at", "2018-08-06 20:54:15.976114"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UserTest: test_first_name_should_be_nonblank
+--------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+UserTest: test_last_name_should_be_nonblank
+-------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 22:54:16 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2018-08-06 22:54:16 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:59:44.739677', '2018-08-06 20:59:44.739677', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 20:59:44.739677', '2018-08-06 20:59:44.739677', 298486374)[0m
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 21:04:49.089963', '2018-08-06 21:04:49.089963', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 21:04:49.089963', '2018-08-06 21:04:49.089963', 298486374)[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 21:05:52.277930', '2018-08-06 21:05:52.277930', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-08-06 21:05:52.277930', '2018-08-06 21:05:52.277930', 298486374)[0m
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2018-08-06 23:11:40 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 253.0ms | ActiveRecord: 0.5ms)
+Started POST "/login" for 127.0.0.1 at 2018-08-06 23:11:40 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

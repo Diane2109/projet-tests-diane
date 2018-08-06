@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TddApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+          <% if !current_index_page? %>
+            <% if logged_in? %>
+              <%= link_to "Club privé : page secrète", secret_page_path %>
+              <%= link_to "Se déconnecter", logout_path, method: :delete %>
+            <% else %>
+              <%= link_to "Accueil", root_path, id: "logo" %>
+              <%= link_to "S'inscrire", sign_up_path %>
+              <%= link_to "Se connecter", login_path %>
+            <% end %>
+          <% end %>
+      </div>
+    </header>
+    <%- flash.each do |name, message| %>
+      <p><strong><%= "#{message}" %></strong></p>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
