@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       log_in @user
       flash[:danger] = "Tu as bien été connecté.e !"
       redirect_to :action=>"show", :controller=>"sessions", :id=>"#{@user.id}"
-    else flash[:danger] = "Tu t'es trompé.e dans la confirmation de ton mot de passe. Recommence ton inscription."
+    else flash[:danger] = "Tu t'es trompé.e dans la confirmation de ton mot de passe ou bien tu n'as pas écrit 6 caractères pour le mot de passe. Recommence ton inscription."
       render 'new'
     end
   end
